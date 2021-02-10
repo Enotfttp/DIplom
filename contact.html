@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!--Подключение иконки сайта-->
+	<link rel="shortcut icon" href="img/favicon.png">
+<!--Подключение css-->
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/contact.css">
+<!--Подключение шрифтов-->
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@1,400;1,700&family=Philosopher:ital,wght@1,700&family=Qwigley&display=swap" rel="stylesheet">
+	<title>SovaTest</title>
+</head>
+<body>
+	<header>
+		<!--Выезжающее меню слева-->
+		<div id="menu" >
+		<!--Крестик или три полоски для захода в меню-->
+			<div class="toggle-btn" onclick="openMenu()">
+				<span class="btn-line btn-line-first"></span>
+				<span class="btn-line btn-line-second"></span>
+				<span class="btn-line btn-line-third"></span>
+				<span class="btn-line btn-line-fourth"></span>
+			</div>
+		<!--Поля в меню-->
+			<div id="vertical-menu">
+				<ul class="nav-links">
+					<li class="menu-name">Меню</li>
+					<li class="nav-links-1"><a href="index.html">Главная</a></li>
+					<li class="nav-links-1"><a href="#">Тесты</a>
+		<!--Кнопка плюс и минус-->
+						<div id="plus-minus" onclick="openSubMenu()">
+							<span class="btn-plus btn-plus-first"></span>
+							<span class="btn-plus btn-plus-second"></span>
+						</div>
+		<!--Выезжающее подменю-->
+						<ul class="submenu">
+							<li class="nav-links-2"><a href="#">Развлекательные</a></li>
+							<li class="nav-links-2"><a href="#">Для детей</a></li>
+							<li class="nav-links-2"><a href="#">ПДД</a></li>
+							<li class="nav-links-2"><a href="#">Для девочек</a></li>
+							<li class="nav-links-2"><a href="#">Для мальчиков</a></li>
+							<li class="nav-links-2"><a href="#">IQ-тесты</a></li>
+						</ul>
+					</li>
+					<li class="nav-links-1 nav-links-3"><a href="#">Контакты</a></li>
+				</ul>
+			</div>
+			<img class="sova-menu" src="img/sova.png" alt="">
+		</div>
+		<div class="panel">
+			<div class="logo">
+				<span class="logo-menu">SovaTest</span>
+			</div>
+			<div class="search">
+				<img class="magnifier" src="img/magnifier.png" alt="#">
+				<input class="search-field" type="text" placeholder="Поиск по тестам">
+			</div>
+			<div id="authoriz" onclick="openAuthoriz()">
+				<button class="btn-open">Войти</button>
+			</div>
+		</div>	
+	</header>
+	<hr>
+	<!--Форма обратной связи-->
+	<h1 class="write-me">Напишите нам</h1>
+		<p class="question">По вопросам наполнения сайта, сотрудничество, найденных ошибок и любым другим.</p>
+	<div class="main-contact">
+		<img class="sova-contact" src="img/sova.png" alt="Сова на книжках">
+		<form  class="form-contact" action="contact.html" method="post">
+			<input type="text" type="text" name="" placeholder="Ваше имя">
+			<input type="text" type="text" name="" placeholder="E-mail">
+			<textarea class="message" type="text" type="text" name="" placeholder="Текст сообщения"></textarea>
+			<button class="btn-write">Напишите нам</button>
+		</form>
+	</div>
+	<!--Авторизация всплывающее окно-->
+	<div id="form-authorize">
+		<form class="form-box" action="index.html" method="post">
+			<div class="cross-authorize" onclick="closeAuthorize()">
+				<span class="cross cross-first"></span>
+				<span class="cross cross-second"></span>
+			</div>
+			<img src="img/user.png" alt="" class="user">
+			<h1>Welcome</h1>
+			<input type="text" name="" placeholder="Username">
+			<input type="password" name="" placeholder="Password">
+			<input type="submit" name="" value="Login">
+			<span  id="forgot__link" onclick="openReg()">Зарегистрироваться</span>
+		</form>
+		</div>
+		<!--Регистрация-->
+		<div id="form-reg">
+			<form action="reg.html" class="reg-form"method="post">
+				<div class="cross-reg" onclick="closeReg()">
+					<span class="cross cross-first"></span>
+					<span class="cross cross-second"></span>
+				</div>
+				<img src="img/user.png" alt="" class="user">
+				<h1>Registration</h1>
+				<input type="text" name="" placeholder="FIO">
+				<input type="text" name="" placeholder="Username">
+				<input id="pas-1" type="password" name="" placeholder="Password">
+				<input id="pas-2" type="password" name="" placeholder="Password" >
+				<input type="submit" name="" value="registration">
+			</form>
+		</div>
+		<script src="js/script.js"></script>
+		<!--Подключение jquery -->
+			<script src="http://code.jquery.com/jquery-1.8.3.js"></script>	
+		</body>
+		</html>

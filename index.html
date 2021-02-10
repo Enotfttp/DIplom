@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!--Подключение иконки сайта-->
+	<link rel="shortcut icon" href="img/favicon.png">
+<!--Подключение css-->
+	<link rel="stylesheet" href="css/style.css">
+<!--Подключение шрифтов-->
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@1,400;1,700&family=Philosopher:ital,wght@1,700&family=Qwigley&display=swap" rel="stylesheet">
+	<script
+  src="https://code.jquery.com/jquery-3.5.1.js"
+  integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+  crossorigin="anonymous"></script>
+	<title>SovaTest</title>
+</head>
+<body>
+	<header>
+		<!--Выезжающее меню слева-->
+		<div id="menu" >
+		<!--Крестик или три полоски для захода в меню-->
+			<div class="toggle-btn" onclick="openMenu()">
+				<span class="btn-line btn-line-first"></span>
+				<span class="btn-line btn-line-second"></span>
+				<span class="btn-line btn-line-third"></span>
+				<span class="btn-line btn-line-fourth"></span>
+			</div>
+		<!--Поля в меню-->
+			<div id="vertical-menu">
+				<ul class="nav-links">
+					<li class="menu-name">Меню</li>
+					<li class="nav-links-1"><a href="index.html">Главная</a></li>
+					<li class="nav-links-1"><a href="#">Тесты</a>
+		<!--Кнопка плюс и минус-->
+						<div id="plus-minus" onclick="openSubMenu()">
+							<span class="btn-plus btn-plus-first"></span>
+							<span class="btn-plus btn-plus-second"></span>
+						</div>
+		<!--Выезжающее подменю-->
+						<ul class="submenu">
+							<li class="nav-links-2"><a href="#">Развлекательные</a></li>
+							<li class="nav-links-2"><a href="#">Для детей</a></li>
+							<li class="nav-links-2"><a href="#">ПДД</a></li>
+							<li class="nav-links-2"><a href="#">Для девочек</a></li>
+							<li class="nav-links-2"><a href="#">Для мальчиков</a></li>
+							<li class="nav-links-2"><a href="#">IQ-тесты</a></li>
+						</ul>
+					</li>
+					<li class="nav-links-1 nav-links-3"><a href="contact.html">Контакты</a></li>
+				</ul>
+			</div>
+			<img class="sova-menu" src="img/sova.png" alt="">
+		</div>
+		<div class="panel">
+			<div class="logo">
+				<span class="logo-menu">SovaTest</span>
+			</div>
+			<div class="panel-2">
+				<div class="search">
+					<img class="magnifier" src="img/magnifier.png" alt="#">
+					<input class="search-field" type="text" placeholder="Поиск по тестам">
+				</div>
+				<div id="authoriz" onclick="openAuthoriz()">
+					<button class="btn-open">Войти</button>
+				</div>
+			</div>
+			
+		</div>	
+	</header>
+	<!--Авторизация всплывающее окно-->
+	<div id="form-authorize">
+		<form class="form-box">
+			<div class="cross-authorize" onclick="closeAuthorize()">
+				<span class="cross cross-first"></span>
+				<span class="cross cross-second"></span>
+			</div>
+			<img src="img/user.png" alt="" class="user">
+			<h1>Welcome</h1>
+			<input type="text" name="" placeholder="Username">
+			<input type="password" name="" placeholder="Password">
+			<button class="btn-login">Login</button>
+			<span  id="forgot__link" onclick="openReg()">Зарегистрироваться</span>
+		</form>
+		</div>
+		<!--Регистрация-->
+		<div id="form-reg">
+			<form action="" class="reg-form" >
+				<div class="cross-reg" onclick="closeReg()">
+					<span class="cross cross-first"></span>
+					<span class="cross cross-second"></span>
+				</div>
+				<img src="img/user.png" alt="" class="user">
+				<h1>Registration</h1>
+				<input type="text" name="" placeholder="FIO">
+				<input class="login" type="text" name="" placeholder="Username" onblur="username()">
+				<span id="err-username">Такое имя уже занято</span>
+				<input id="pas_1" type="password" name="" placeholder="Password" onblur="pas()">
+				<input id="pas_2" type="password" name="" placeholder="Password" onblur="pas()">
+				<span id="err-pas">пароли не совпадают</span>
+				<button class="btn-reg" onclick="registration()">registration</button>
+			</form>
+		</div>
+		
+	<div class="popular-test">
+		<div class="container">
+			<h2 class="popular-text">Самые популярные тесты</h2>	
+				<div class="slider">
+					<!--<div class="slider-block">
+						<img src="img/1.png" alt="#">
+						<p>пример №1</p>
+					</div>
+
+					<div class="slider-block">
+						<img src="img/2.png" alt="#">
+						<p>пример №2</p>
+					</div>
+
+					<div class="slider-block">
+						<img src="img/3.png" alt="#">
+						<p>пример №3</p>
+					</div>
+
+					<div class="slider-block">
+						<img src="img/4.png" alt="#">
+						<p>пример №4</p>
+					</div>
+
+					<div class="slider-block">
+						<img src="img/5.png" alt="#">
+						<p>пример №5</p>
+					</div>
+
+					<div class="slider-block">
+						<img src="img/6.png" alt="#">
+						<p>пример №6</p>
+					</div>
+
+				
+				</div>-->
+		</div>	
+	</div>
+	<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+	<link rel="stylesheet" href="slick/slick.css">
+	<link rel="stylesheet" href="slick/slick-theme.css">
+	<script src="slick/slick.min.js"></script>
+	<script src="js/script.js"></script>
+	<script src="js/app.js"></script>
+
+<!--Подключение jquery -->
+<script>
+	$(document).ready(function(){
+	$('.slider').slick({
+	dots: true,
+	infinite: true,
+	speed: 300,
+	slidesToShow: 3,
+	adaptiveHeight: true
+	});
+ });
+</script>
+</body>
+</html>

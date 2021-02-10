@@ -1,0 +1,475 @@
+*, *::before, *::after {
+	-webkit-box-sizing: border-box;
+			  box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+ }
+ 
+ a, button, button:active, button:hover, a:active, a:hover {
+	text-decoration: none;
+	border: 0;
+	outline: none;
+ }
+ 
+ input, textarea {
+	outline: none;
+	border: none;
+ }
+ 
+ .container {
+	width: 80%;
+	margin: 0 auto;
+ }
+ header{
+	 position: fixed;
+	 width: 100%;
+	 height: 90px;
+	 background: #fff;
+	 transition: all .10s;
+	 border-radius:0px 0px 20px 20px;
+	
+ }
+ //Тень под фиксированной панелькой
+ header.scroll{
+	box-shadow: 0px 2px 20px #000;
+ }
+ .panel{
+	width: 100%;
+	padding: 0px 70px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+ }
+ .panel-2{
+	display: flex;
+	justify-content: space-around;
+}
+ // Выезжающее меню слева
+ #menu{
+	position: fixed;
+	width: 250px;
+	height: 100%;
+	left:-500px;
+	background: #4F507B;
+	border-radius: 0 50px 50px 0;
+	box-shadow: 4px 2px 40px #000;
+	transition:all .3s;
+ }
+ #menu.active{
+	 left:0;
+ }
+ //Крестик или три полоски для захода в меню
+.toggle-btn{
+	position: fixed;
+	width: 100px;
+	height: 30px;
+	left: 20px;
+	top: 25px;
+	padding: 10px;
+	cursor: pointer;
+}
+.btn-line{
+	position: absolute;
+	display:block;
+	width: 30px;
+	height: 4px;
+	background-color: #4F507B;
+	transition: all .3s;
+}
+.btn-line-first{
+	top: 0;
+}
+.btn-line-second, .btn-line-third{
+	top: 50%;
+	transform: translateY(-50%);
+}
+.btn-line-fourth{
+	bottom: 0;
+}
+#menu.active .btn-line-fourth, #menu.active .btn-line-first{
+	opacity: 0;
+}
+#menu.active .btn-line-second{
+	top: 50%;
+	transform: translateY(-50%)rotate(45deg);
+}
+#menu.active .btn-line-third{
+	top: 50%;
+	transform: translateY(-50%) rotate(-45deg);
+}
+#menu.active span{
+	background-color: #fff;	
+}
+
+//Внешний вид меню
+.menu-name{
+	text-align: center;
+	padding-top: 24px;
+	padding-bottom: 20px;
+	font-size: 30px;
+	color:#fff;
+}
+.nav-links-1{
+	margin: 5px auto;
+	width: 90%;
+	height: 46px;
+	border-radius:10px ;
+	background: #261844;
+	padding: 10px 20px;
+	list-style: none;
+}
+.nav-links-1 a:hover{
+	color:aqua
+}
+.nav-links-1 a{
+	font-size: 22px;
+	font-weight: 600;
+	color:#fff;
+}
+// Кнопка плюс и минус
+#plus-minus{
+	position: absolute;
+	left: 200px;	
+	top: 134px;
+	width: 38px;
+	border-radius:0 10px 10px 0 ;
+	height: 47px;
+	background: #344C4E;
+	cursor: pointer;
+}
+.btn-plus{
+	position: absolute;
+	display:block;
+	top:46%;
+	left: 22%;
+	width: 20px;
+	height: 4px;
+	background-color: #4F507B;
+	transition: all .3s;
+}
+.btn-plus-second{
+	transform:rotate(90deg);
+}
+#vertical-menu.active .btn-plus-second{
+	transform: rotate(0);
+}
+// Подменю
+.submenu{
+	position: absolute;
+	top: 180px;
+	padding-left: 13px;
+	left: -254px;
+	width: 233px;
+	height: 100%;	
+	transition: all .5s;
+	
+}
+.nav-links-2{
+	list-style: none;
+	background: #113C4F;
+	padding: 10px 10px 10px 15px;
+	margin-top: 2px;
+	border-radius: 0 10px 10px 0;
+}
+.nav-links-2 a{
+	font-size: 18px;
+	color:#fff;
+}
+
+#vertical-menu.active .submenu{
+	position: absolute;
+	left: 0px;	
+}
+// Меню поле Контакты, чтобы съезжало вниз
+#vertical-menu.active .nav-links-3{
+	position: relative;
+	top: 256px;
+}
+// Сова в меню
+.sova-menu{
+	position: absolute;
+	bottom: 0;
+	border-radius: 30px;
+	left: 80px;
+	width: 150px;
+	height: 200px;
+}
+
+
+//Логотип
+.logo-menu{
+	margin-left: 40px;
+	font-family: 'Qwigley', cursive;	
+	font-weight: 800;
+	font-size: 75px;
+	color:#000;
+}
+//Поиск
+.search{
+	position: relative;
+	margin-right: 100px;
+}
+.magnifier{
+	position: absolute;
+	left:5%;
+	top:50%;
+	transform: translateY(-50%);
+	width: 26px;
+	height: 26px;
+}
+.search-field{
+	background: #E5E5E5;
+	width: 280px;
+	height: 50px;
+	border-radius: 30px;
+	border: #A5E4E8 2px solid;
+	padding-top: 5px;
+	padding-left: 55px;
+	font-size: 20px;
+
+}
+
+//Кнопка войти
+.btn-open{
+	background: #E94D4D;
+	width: 140px;
+	height: 50px;
+	border-radius: 15px;
+	color:#fff;
+	font-size: 18px;
+	font-weight: 700;
+	transition: all .3s;
+	box-shadow: 3px 3px 3px #000;
+	cursor: pointer;
+}
+.btn-open:active{
+	box-shadow: none;
+}
+
+//Авторизация всплывающее окно
+.user {
+	width: 100px;	
+	height: 100px;
+ }
+ #forgot__link {
+	display: block;
+	margin-bottom: 10px;
+	font-size: 18px;
+	color: #261844;
+	font-weight: 700;
+	text-decoration: none;
+	transition: .2s;
+	cursor: pointer;
+ }
+ #forgot__link:hover {
+	color: #838383;
+ }
+ // Крестик для закрытия формы авторизации
+ .cross-authorize{
+	position: absolute;
+	bottom: 88%;
+	left: 80%;
+	width: 80px;
+	height: 50px;
+	padding: 10px;
+	cursor: pointer;
+ }
+.cross{
+	position: absolute;
+	display:block;
+	width: 40px;
+	height: 5px;
+	background-color: #4F507B;
+	transition: all .3s;
+}
+.cross-first{
+	transform:rotate(-45deg);
+}
+.cross-second{
+	transform:rotate(45deg);
+}
+ // Размеры формы авторизации
+ .form-box{
+	width: 400px;
+	padding: 50px;
+	padding-top: 90px;
+	padding-bottom: 90px; 
+	position: absolute;
+	box-shadow: -15px 53px 68px -9px rgba(0,0,0,0.75);
+	border-top-left-radius: 25%;
+	border-bottom-right-radius: 25%; 
+	top: -1000px;
+	left: 35%;
+	transition: all .5s;
+	background: #fff;
+	text-align: center;
+ }
+ //Анимация появления авторизации
+ #form-authorize.active .form-box{
+	z-index:1;
+	top: 50%;
+	transform: translateY(-50%);
+ }
+ //Затемнение заднего фона
+ body:after{
+	opacity: 0;
+	content:"";
+ }
+ body.shadow:after{
+	content:"";
+	background: #a9a9a9;
+	opacity: .3;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	position: fixed;
+ }
+ .form-box h1{
+	text-transform: uppercase;
+	font-weight: 700;
+	font-size: 28px;
+ }
+ .form-box input[type = "text"],.form-box input[type = "password"]{
+	border:0;
+	background: none;
+	display: block;
+	margin: 20px auto;
+	font-size: 16px;
+	border: none;
+	border-bottom: 2px solid #6856EB;
+	padding: 14px 15px;
+	width: 200px;
+	outline: none;
+	transition: 0.25s;
+ }
+ .form-box input[type = "text"]:focus,.form-box input[type = "password"]:focus{
+	width: 250px;
+	border-color: #B44BD3;
+ }
+ .btn-login{
+	border:0;
+	background: none;
+	display: block;
+	margin: 20px auto;
+	text-align: center;
+	border: 2px solid #B44BD3;
+	width: 230px;
+	height: 30px;
+	outline: none;
+	border-radius: 24px;
+	transition: 0.25s;
+	cursor: pointer;
+ }
+ .btn-login:hover{
+	color:#fff;
+	background: #9A50DC;
+ }
+//Регистрация
+#form-reg{
+	position: fixed;
+	width: 400px;
+	padding: 50px;
+	padding-top: 90px;
+	padding-bottom: 90px; 
+	position: absolute;
+	box-shadow: -15px 53px 68px -9px rgba(0,0,0,0.75);
+	border-top-left-radius: 25%;
+	border-bottom-right-radius: 25%; 
+	top: -1000px;	
+	left: 35%;
+	transition: all .5s;
+	background: #fff;
+	text-align: center;
+ }
+ //Анимация появления регистрации
+ #form-reg.active{
+	z-index:1;
+	top: 50%;
+	transform: translateY(-50%);
+ }
+//Крестик в форме регистрации
+.cross-reg{
+	position: absolute;
+	bottom: 88%;
+	left: 80%;
+	width: 80px;
+	height: 50px;
+	padding: 10px;
+	cursor: pointer;
+}
+.reg-form h1{
+	text-transform: uppercase;
+	font-weight: 700;
+	font-size: 28px;
+ }
+ .reg-form input[type = "text"],.reg-form input[type = "password"]{
+	border:0;
+	background: none;
+	display: block;
+	margin: 20px auto;
+	font-size: 16px;
+	border: none;
+	border-bottom: 2px solid #6856EB;
+	padding: 14px 15px;
+	width: 200px;
+	outline: none;
+	transition: 0.25s;
+ }
+ .reg-form input[type = "text"]:focus,.reg-form input[type = "password"]:focus{
+	width: 250px;
+	border-color: #B44BD3;
+ }
+ .btn-reg{
+	border:0;
+	background: none;
+	display: block;
+	margin: 20px auto;
+	text-align: center;
+	border: 2px solid #B44BD3;
+	width: 230px;
+	height: 30px;
+	outline: none;
+	border-radius: 24px;
+	transition: 0.25s;
+	cursor: pointer;
+ }
+ .btn-reg:hover{
+	color:#fff;
+	background: #9A50DC;
+ }
+ //Вывод ошибки пароля
+ #err-pas{
+	display:none;
+	font-size: 16px;
+ }
+ //Проверка на занятое имя
+ #err-username{
+	display: none;
+ }
+
+//Популярные тесты
+.popular-test{
+	background: #DEE2E1;
+	width: 100%;
+	padding-top: 110px;
+	height: 600px;
+}
+.popular-text{
+	text-align: center;
+	font-size: 28px;
+	font-style: italic;
+}
+.slider{
+	margin-top: 30px;
+}
+.slider-block{
+	position: relative;
+	img{
+		position: absolute;
+		width: 200px;
+		height: 600px;
+	}
+	border:red 2px solid;
+
+}
